@@ -1,5 +1,44 @@
 #include <stdio.h>
 
+// Nível Mestre - Funções Recursivas e Loops Aninhados
+    // Sugestão: Substitua as movimentações das peças por funções recursivas.
+    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+
+void movimentotorre(int casas){
+    if (casas > 0)
+    {
+    printf("Direita \n");
+    movimentotorre(casas - 1);
+    }
+}
+
+void movimentobispo(int casas){
+    int v, h;
+    if (casas > 0){
+    for (v = 1; v < 1; v++);
+    {
+        for (h = 1; h < 0; h++);
+        {
+            printf("Direita. \n");
+        }
+    
+    printf("Cima. \n");
+    
+    }
+    
+    movimentobispo(casas - 1);
+    }
+}
+
+void movimentorainha(int casas){
+    if (casas > 0)
+    {
+    printf("Esquerda. \n");
+    movimentorainha(casas - 1);
+    }
+}
+
+
 // Desafio de Xadrez - MateCheck
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
@@ -32,10 +71,7 @@ int main() {
 
             if (movbispo <= 5)
             {
-                for (int b = 1; b <= movbispo; b++)
-                {
-                    printf("Cima, Direita.\n");
-                }
+               movimentobispo(movbispo);
             }
             
             printf("\nNúmero de casas excede o máximo.");
@@ -52,10 +88,7 @@ int main() {
 
             if (movtorre <= 5)
             {
-                for (int t = 1; t <= movtorre; t++)
-                {
-                    printf("Direita.\n");
-                }
+                movimentotorre(movtorre);
             }
             
             printf("\nNúmero de casas excede o máximo.");
@@ -72,10 +105,7 @@ int main() {
 
             if (movrainha <= 8)
             {
-                for (int r = 1; r <= movrainha; r++)
-                {
-                    printf("Esquerda.\n");
-                }
+                movimentorainha(movrainha);
             }
             
             printf("\nNúmero de casas excede o máximo.");
@@ -116,9 +146,7 @@ int main() {
     }
     
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    
 
     // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
     // Inclua o uso de continue e break dentro dos loops.
